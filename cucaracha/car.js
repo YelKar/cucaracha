@@ -6,7 +6,7 @@ let CAR = {
     angle: 30,
     color: "red",
     fSpeed: 0,
-    maxSpeed: 20,
+    maxSpeed: 15,
 
     states: {
         forward: false,
@@ -31,12 +31,13 @@ let CAR = {
         ctx.beginPath();
         ctx.translate(this.x + this.width / 2, this.y + this.height / 2);
         ctx.rotate(this.angle * Math.PI / 180);
-        ctx.rect(-this.width / 2, -this.height / 2, this.width, this.height);
+        // ctx.rect(-this.width / 2, -this.height / 2, this.width, this.height);
+        
+        ctx.drawImage(this.img, -this.width / 2, -this.height / 2, this.width * 2, this.height * 1.2);
         ctx.closePath();
         ctx.fill();
         ctx.stroke();
         ctx.restore();
-        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     },
     update() {
         this.fSpeed += (this.states.forward - this.states.backward) / 1.2;
@@ -46,7 +47,7 @@ let CAR = {
         this.angle += (this.states.right - this.states.left) * Math.abs(this.fSpeed) / 4;
         
         if (this.states.forward == this.states.backward && this.fSpeed) {
-            this.fSpeed -= Math.sign(this.fSpeed) * 0.5;
+            this.fSpeed -= Math.sign(this.fSpeed) * 2;
         }
         
         if (Math.abs(this.fSpeed) > this.maxSpeed) {

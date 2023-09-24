@@ -24,6 +24,7 @@ function play() {
 
 function setup() {
     CAR.addEventListeners();
+    CAR.setup();
     GAME.setup();
 }
 setup();
