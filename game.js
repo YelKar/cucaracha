@@ -9,7 +9,7 @@ let GAME = {
         width: 5
     },
     setup() {
-        this.img.src = "./floor.jpg";
+        this.img.src = "./src/floor2.jpg";
         this.img.loaded = false;
         this.img.addEventListener("load", e => {
             this.img.loaded = true;

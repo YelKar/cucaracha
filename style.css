@@ -1,0 +1,41 @@
+:root {
+    --bgc: #FFFFF0;
+    --headerColor: rgb(140, 66, 9);
+    --gameBorderColor: var(--headerColor);
+}
+@font-face {
+    font-family: NokiaKokia;
+    src: url("./src/NokiaKokia.ttf");
+}
+canvas {
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--gameBorderColor);
+    border-radius: 10px;
+}
+html {
+    background-color: var(--bgc);
+    text-align: center;
+}
+h1 {
+    display: inline-block;
+
+    font-family: NokiaKokia;
+    font-size: 40px;
+    color: var(--headerColor);
+}
+h1 > a {
+    font-family: NokiaKokia;
+    font-size: 40px;
+    color: var(--headerColor);
+    text-decoration: none;
+}
+img.cucarachaIcon {
+    display: inline;
+    padding-top: 20px;
+    width: 80px;
+    padding-right: 20px;
+}
+header {
+    display: block;
+}
